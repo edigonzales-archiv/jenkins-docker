@@ -1,6 +1,7 @@
 ace-editor:latest
 ant:latest
 antisamy-markup-formatter:latest
+artifactory:latest
 authentication-tokens:latest
 bouncycastle-api:latest
 branch-api:2.0.5
