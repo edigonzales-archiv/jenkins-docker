@@ -18,5 +18,13 @@ RUN usermod -a -G staff,docker jenkins
 
 USER jenkins
 
-ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64/jre
+# Install Gradle
+RUN \
+    cd /usr/local && \
+    curl -L https://services.gradle.org/distributions/gradle-4.2-bin.zip -o gradle-4.2-bin.zip && \
+    unzip gradle-4.2-bin.zip && \
+    rm gradle-4.2-bin.zip
 
+# Export some environment variables
+ENV GRADLE_HOME=/usr/local/gradle-4.2
+ENV PATH=$PATH:$GRADLE_HOME/bin JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
