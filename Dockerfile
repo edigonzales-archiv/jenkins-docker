@@ -1,5 +1,8 @@
 FROM jenkins/jenkins:2.79
 
+COPY plugins.txt /usr/share/jenkins/ref/plugins.txt
+RUN xargs /usr/local/bin/install-plugins.sh < /usr/share/jenkins/ref/plugins.txt
+
 USER root
 
 #https://get.docker.com/builds/
