@@ -35,6 +35,7 @@ gitlab-plugin:latest
 google-login:latest
 gradle:latest
 gravatar:latest
+groovy:latest
 handlebars:latest
 icon-shim:latest
 jackson2-api:latest
