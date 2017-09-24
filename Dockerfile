@@ -1,8 +1,5 @@
 FROM jenkins/jenkins:2.79
 
-# set jdk in jenkins
-COPY add-jdk.groovy /usr/share/jenkins/ref/init.groovy.d/add-jdk.groovy
-
 # add some jenkins plugins
 COPY plugins.txt /usr/share/jenkins/ref/plugins.txt
 RUN xargs /usr/local/bin/install-plugins.sh < /usr/share/jenkins/ref/plugins.txt
@@ -35,3 +32,6 @@ ENV PATH=$PATH:$GRADLE_HOME/bin JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 
 # set gradle in jenkins
 COPY add-gradle.groovy /usr/share/jenkins/ref/init.groovy.d/add-gradle.groovy
+
+# set jdk in jenkins
+COPY add-jdk.groovy /usr/share/jenkins/ref/init.groovy.d/add-jdk.groovy
